@@ -38,8 +38,8 @@ function printd(...)
 	-- initialize to do nothing
 end
 
+local prettyname = "[[DEBUG]] MY MOD NAME: "
 if should_debug then -- will pass if should_debug == true or anything that's *isn't* nil or false.
-	local prettyname = "[[DEBUG]] MY MOD NAME: "
 	printd = function(fmt, ...)
   		printf(prettyname..fmt, ...)
 	end
@@ -64,7 +64,7 @@ function GetShard()
 end
 
 function NoInput(check)
-    local msg = prettyname.." Please input a '%s' for the command to work with!"
+    local msg = invalid.." Please input a '%s' for the command to work with!"
     if check == "prefab" then
         msg = stringf(msg, "prefab")
     elseif check == "tendency" then
