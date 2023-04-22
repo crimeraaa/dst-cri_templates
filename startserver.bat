@@ -4,10 +4,36 @@ c:\steamcmd\steamcmd.exe +login anonymous +app_update 343050 +quit
 
 @ echo OFF
 
-:: shut up echo
+:: ==========MOD SETUP===========
 
-:: set the below variable 'main' to wherever your server's cluster folder is installed. don't use quotation marks yet!
+:: see the comment as the first line, this may be different.
 
-set main=C:\Users\My Username\Documents\Klei\DoNotStarveTogether
+set server=C:\steamcmd\steamapps\common\Don't Starve Together Dedicated Server
 
-:: it's also important there's no space between the variable name, the '=' sign and the first character. batch is funky.
+cd /D "%server%/bin"
+
+:: for the following variable declarations: DON'T USE QUOTATION MARKS! We'll surround them with quotes later on.
+
+set cluster=[[your cluster folder location]]
+
+set modsetup=[[path to 'dedicated_server_mods_setup.lua' here]]
+
+set modoverrides=[[path to your 'modoverrides.lua' file here]]
+
+:: remove the '/s' parameter below if you're trying to overwrite a file within the same parent folder.
+
+xcopy /s /i "%modsetup%" "%server%\mods" /y
+
+xcopy /s /i "%modoverrides%" "%cluster%\Master\" /y
+
+xcopy /s /i "%modoverrides%" "%cluster%\Caves\" /y
+
+:: ==========START SERVER===========
+
+:: stolen from thegreatmanagement#4508 :)
+
+start "DST Master" dontstarve_dedicated_server_nullrenderer console_enabled -cluster My_Cluster_Foldername -shard Master
+
+timeout 1
+
+start "DST Caves" dontstarve_dedicated_server_nullrenderer console_enabled -cluster My_Cluster_Foldername -shard Caves
