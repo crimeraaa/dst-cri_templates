@@ -44,6 +44,10 @@ xcopy /s /i "%modoverrides%" "%cluster%\Caves\" /y
 
 start "DST Master" dontstarve_dedicated_server_nullrenderer console_enabled -cluster My_Cluster_Foldername -shard Master
 
+:: example: start "DST Master" dontstarve_dedicated_server_nullrenderer console_enabled -cluster Crimeraaas_Testing_Server -shard Master
+
 timeout 1
 
 start "DST Caves" dontstarve_dedicated_server_nullrenderer console_enabled -cluster My_Cluster_Foldername -shard Caves
+
+:: example: start "DST Caves" dontstarve_dedicated_server_nullrenderer console_enabled -cluster Crimeraaas_Testing_Server -shard Caves
