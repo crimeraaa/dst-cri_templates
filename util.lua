@@ -32,9 +32,17 @@ end
 
 -- [[ DEBUG FUNCTIONS ]]
 -- tbh this is all i have LMAO
-prettyname = "[[DEBUG]] MY MOD NAME: "
-function printd(fmt, ...)
-  printf(prettyname..fmt, ...)
+
+local should_debug = true -- set this to false if you want the mod to shut up
+function printd(...)
+	-- initialize to do nothing
+end
+
+if should_debug then -- will pass if should_debug == true or anything that's *isn't* nil or false.
+	local prettyname = "[[DEBUG]] MY MOD NAME: "
+	printd = function(fmt, ...)
+  		printf(prettyname..fmt, ...)
+	end
 end
 
 -- ==================================
