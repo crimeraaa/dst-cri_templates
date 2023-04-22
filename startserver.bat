@@ -14,11 +14,11 @@ cd /D "%server%/bin"
 
 :: for the following variable declarations: DON'T USE QUOTATION MARKS! We'll surround them with quotes later on.
 
-set cluster=[[your cluster folder location]]
+set cluster=[[full path to your cluster folder]]
 
-set modsetup=[[path to 'dedicated_server_mods_setup.lua' here]]
+set modsetup=[[full path to 'dedicated_server_mods_setup.lua']]
 
-set modoverrides=[[path to your 'modoverrides.lua' file here]]
+set modoverrides=[[full path to 'modoverrides.lua']]
 
 :: remove the '/s' parameter below if you're trying to overwrite a file within the same parent folder.
 
