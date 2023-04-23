@@ -1,8 +1,10 @@
+@ echo OFF
+
+set /p opt="Start caves as well? (y/n): "
+
 :: if you're using the Don't Starve Together Dedicated Server thingy, the below line will be different.
 
 c:\steamcmd\steamcmd.exe +login anonymous +app_update 343050 +quit
-
-@ echo OFF
 
 :: ==========MOD SETUP===========
 
@@ -48,6 +50,6 @@ start "DST Master" dontstarve_dedicated_server_nullrenderer console_enabled -clu
 
 timeout 1
 
-start "DST Caves" dontstarve_dedicated_server_nullrenderer console_enabled -cluster My_Cluster_Foldername -shard Caves
+if %opt%==y start "DST Caves" dontstarve_dedicated_server_nullrenderer console_enabled -cluster My_Cluster_Foldername -shard Caves
 
 :: example: start "DST Caves" dontstarve_dedicated_server_nullrenderer console_enabled -cluster Crimeraaas_Testing_Server -shard Caves
