@@ -6,6 +6,8 @@ set /p opt="Start caves as well? (y/n): "
 
 c:\steamcmd\steamcmd.exe +login anonymous +app_update 343050 +quit
 
+:: userprofile is a predefined variable that refers to, for example for me: C:\Users\Crimeraaa
+
 set main=%userprofile%\Documents\Klei\DoNotStarveTogether
 
 set name=Crimeraaas_Testing_Server
