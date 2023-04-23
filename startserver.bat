@@ -28,7 +28,7 @@ xcopy "%setup%" "%server%\mods" /y
 
 xcopy "%over%" "%cluster%\Master\" /y
 
-xcopy "%over%" "%cluster%\Caves\" /y
+if %opt%==y xcopy "%over%" "%cluster%\Caves\" /y
 
 cd /D "%server%\bin"
 
