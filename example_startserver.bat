@@ -6,7 +6,7 @@ set /p opt="Start caves as well? (y/n): "
 
 c:\steamcmd\steamcmd.exe +login anonymous +app_update 343050 +quit
 
-set main=C:\Users\My Username\Documents\Klei\DoNotStarveTogether
+set main=%userprofile%\Documents\Klei\DoNotStarveTogether
 
 set name=Crimeraaas_Testing_Server
 
