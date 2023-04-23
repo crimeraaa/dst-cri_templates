@@ -18,13 +18,11 @@ set over=%cluster%\modoverrides.lua
 
 set server=C:\steamcmd\steamapps\common\Don't Starve Together Dedicated Server
 
-:: because my modoverrides is in the cluster folder, i can't use /s.
+xcopy "%setup%" "%server%\mods" /y
 
-xcopy /i "%setup%" "%server%\mods" /y
+xcopy "%over%" "%cluster%\Master\" /y
 
-xcopy /i "%over%" "%cluster%\Master\" /y
-
-xcopy /i "%over%" "%cluster%\Caves\" /y
+xcopy "%over%" "%cluster%\Caves\" /y
 
 cd /D "%server%\bin"
 
