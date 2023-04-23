@@ -10,6 +10,8 @@ c:\steamcmd\steamcmd.exe +login anonymous +app_update 343050 +quit
 
 :: userprofile is a predefined variable that refers to, for example for me: C:\Users\Crimeraaa
 
+:: don't wrap any of the variable declarations in quotation marks. they'll only be wrapped when they're invoked.
+
 set main=%userprofile%\Documents\Klei\DoNotStarveTogether
 
 set name=Crimeraaas_Testing_Server
