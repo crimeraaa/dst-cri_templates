@@ -1,6 +1,8 @@
+:: this is the batch file i use to start up my dedicated servers.
+
 @ echo OFF
 
-:: make sure to change the variables' data to those specific to your device!
+:: make sure to change the below variables' data to those specific to your device!
 
 set /p opt="Start caves as well? (y/n): "
 
